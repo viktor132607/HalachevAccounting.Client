@@ -20,8 +20,10 @@ export default function UsersAdmin() {
     const [pageSize, setPageSize] = useState(20)
     const [currentPage, setCurrentPage] = useState(1)
 
+    const API_URL = import.meta.env.VITE_API_URL
+
     const loadUsers = () => {
-        fetch("/api/admin/users", {
+        fetch(`${API_URL}/api/admin/users`, {
             credentials: "include"
         })
             .then(r => r.json())
@@ -65,7 +67,7 @@ export default function UsersAdmin() {
     }, [filteredUsers, currentPage, pageSize])
 
     const block = async (id: string) => {
-        await fetch(`/api/admin/users/${id}/block`, {
+        await fetch(`${API_URL}/api/admin/users/${id}/block`, {
             method: "POST",
             credentials: "include"
         })
@@ -73,7 +75,7 @@ export default function UsersAdmin() {
     }
 
     const unblock = async (id: string) => {
-        await fetch(`/api/admin/users/${id}/unblock`, {
+        await fetch(`${API_URL}/api/admin/users/${id}/unblock`, {
             method: "POST",
             credentials: "include"
         })
@@ -84,7 +86,7 @@ export default function UsersAdmin() {
         const confirmDelete = window.confirm("Delete this user?")
         if (!confirmDelete) return
 
-        await fetch(`/api/admin/users/${id}`, {
+        await fetch(`${API_URL}/api/admin/users/${id}`, {
             method: "DELETE",
             credentials: "include"
         })
@@ -203,8 +205,8 @@ export default function UsersAdmin() {
                                         <td className="p-3">
                                             <span
                                                 className={`inline-flex rounded-full px-3 py-1 text-sm font-medium ${u.isBlocked
-                                                        ? "bg-red-100 text-red-700"
-                                                        : "bg-green-100 text-green-700"
+                                                    ? "bg-red-100 text-red-700"
+                                                    : "bg-green-100 text-green-700"
                                                     }`}
                                             >
                                                 {u.isBlocked ? "Blocked" : "Active"}

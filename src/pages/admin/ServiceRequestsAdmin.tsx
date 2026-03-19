@@ -24,8 +24,10 @@ export default function ServiceRequestsAdmin() {
     const [pageSize, setPageSize] = useState(20)
     const [currentPage, setCurrentPage] = useState(1)
 
+    const API_URL = import.meta.env.VITE_API_URL
+
     const load = () => {
-        fetch("/api/admin/service-requests", {
+        fetch(`${API_URL}/api/admin/service-requests`, {
             credentials: "include"
         })
             .then(r => r.json())
@@ -37,7 +39,7 @@ export default function ServiceRequestsAdmin() {
     }, [])
 
     const remove = async (id: number) => {
-        await fetch(`/api/admin/service-requests/${id}`, {
+        await fetch(`${API_URL}/api/admin/service-requests/${id}`, {
             method: "DELETE",
             credentials: "include"
         })
@@ -236,8 +238,8 @@ export default function ServiceRequestsAdmin() {
                         key={page}
                         onClick={() => setCurrentPage(page)}
                         className={`px-3 py-1.5 border rounded-lg ${safeCurrentPage === page
-                                ? "bg-black text-white border-black"
-                                : "bg-white hover:bg-gray-50"
+                            ? "bg-black text-white border-black"
+                            : "bg-white hover:bg-gray-50"
                             }`}
                     >
                         {page}

@@ -9,8 +9,10 @@ export default function AdminPanel() {
         blogPosts: 0
     })
 
+    const API_URL = import.meta.env.VITE_API_URL
+
     useEffect(() => {
-        fetch("/api/admin/dashboard", {
+        fetch(`${API_URL}/api/admin/dashboard`, {
             credentials: "include"
         })
             .then(r => r.json())

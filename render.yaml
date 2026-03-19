@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: halachev-accounting-client
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: VITE_API_URL
+        value: https://halachev-accounting-api.onrender.com
