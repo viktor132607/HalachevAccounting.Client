@@ -1,330 +1,359 @@
 import { useTranslation } from "react-i18next"
-import { Link } from "react-router-dom"
 
 export default function Home() {
     const { i18n } = useTranslation()
     const lang = i18n.language
 
-    const cardBase =
-        "flex w-full max-w-[960px] min-h-[352px] flex-col items-center rounded-2xl bg-sky-200 px-6 py-8 text-center text-gray-900 no-underline shadow-[0_10px_15px_rgba(0,0,0,0.08)] transition duration-150 ease-in-out hover:scale-[1.02] hover:shadow-[0_16px_30px_rgba(0,0,0,0.12)]"
+    const pageWrap =
+        "mx-auto w-full max-w-[1600px] px-4 py-4 sm:px-6 sm:py-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16"
 
-    const imageBase =
-        "mb-4 h-40 w-[120px] rounded-[10px] bg-gray-400 bg-center bg-no-repeat"
+    const heroClass =
+        "relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)] sm:rounded-[28px]"
 
-    const titleBase =
-        "mb-[14px] inline-block rounded-full bg-white/70 px-6 py-2.5 text-[18px] font-semibold leading-snug"
+    const heroInnerClass =
+        "px-4 py-10 text-center sm:px-8 sm:py-14 md:px-10 md:py-16 lg:px-12 lg:py-20 xl:px-16 xl:py-24 2xl:px-20 2xl:py-28"
 
-    const descBase =
-        "mb-4 max-w-[680px] text-[15px] leading-[1.7] text-gray-700"
+    const heroTitleClass =
+        "mx-auto max-w-4xl text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl xl:text-6xl"
 
-    const bulletsBase =
-        "mb-4 list-disc space-y-1 pl-5 text-left text-[15px] leading-[1.7] text-gray-800"
+    const heroTextClass =
+        "mx-auto mt-4 max-w-xs text-sm leading-7 text-slate-700 sm:mt-6 sm:max-w-2xl sm:text-[15px] sm:leading-8 md:max-w-3xl md:text-base lg:text-lg lg:leading-9"
 
-    const tagBase =
-        "inline-block rounded-full bg-white px-4 py-2 text-[13px] font-extrabold text-gray-900 shadow-sm"
+    const heroButtonsClass =
+        "mt-6 flex flex-col items-stretch justify-center gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center"
+
+    const primaryButtonClass =
+        "inline-flex min-h-[48px] items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:px-6"
+
+    const secondaryButtonClass =
+        "inline-flex min-h-[48px] items-center justify-center rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 sm:px-6"
+
+    const containerClass =
+        "mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)] sm:mt-8 sm:rounded-[28px] lg:mt-10"
+
+    const titleWrapClass =
+        "border-b border-slate-200 px-4 py-6 sm:px-8 sm:py-8 md:px-10 lg:px-12"
+
+    const titleClass =
+        "text-center text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl"
+
+    const contentClass =
+        "divide-y divide-slate-200"
+
+    const sectionClass =
+        "scroll-mt-24 px-4 py-6 sm:px-8 sm:py-8 md:px-10 lg:px-12 xl:px-14"
+
+    const headingClass =
+        "mb-3 text-xl font-bold text-slate-900 sm:mb-4 sm:text-2xl md:text-[28px]"
+
+    const textClass =
+        "text-sm leading-7 text-slate-700 whitespace-pre-line sm:text-[15px] sm:leading-8 md:text-base"
+
+    const listClass =
+        "mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700 sm:pl-6 sm:text-[15px] sm:leading-8 md:text-base"
 
     return lang === "bg" ? (
-        <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-center gap-12">
-                <section className="max-w-3xl text-center text-gray-800">
-                    <h1 className="mb-4 inline-block rounded-full bg-sky-100 px-6 py-2 text-[18px] font-semibold text-gray-900 shadow-[0_4px_10px_rgba(0,0,0,0.06)]">
-                        Счетоводно обслужване без компромиси
-                    </h1>
-                    <p className="m-0 text-base leading-[1.7]">
-                        Професионално счетоводно обслужване, съобразено с българското законодателство,
-                        международните стандарти и реалните нужди на бизнеса.
+        <div className={"scroll-smooth " + pageWrap}>
+            <section id="home" className={heroClass}>
+                <div className={heroInnerClass}>
+                    <h1 className={heroTitleClass}>Никола Халачев Акаунтинг</h1>
+                    <p className={heroTextClass}>
+                        Професионално счетоводно обслужване, данъчни консултации, ТРЗ, правни и
+                        партньорски услуги за български и чуждестранни клиенти.
                     </p>
-                </section>
 
-                <section className="max-w-3xl text-center">
-                    <h2 className="mb-4 inline-block rounded-full bg-sky-100 px-6 py-2 text-sm font-semibold text-gray-900 shadow-[0_4px_10px_rgba(0,0,0,0.06)]">
-                        КАКВО ПРЕДЛАГАМ
-                    </h2>
-                    <p className="mx-auto max-w-[720px] text-[15px] leading-[1.7] text-gray-700">
-                        Ясни процеси, предвидимост и сигурност. Работите с един счетоводен партньор,
-                        който поема отговорност и комуникира директно с институциите.
-                    </p>
-                </section>
+                    <div className={heroButtonsClass}>
+                        <a href="#services" className={primaryButtonClass}>
+                            Виж услуги
+                        </a>
+                        <a href="#foreign-clients" className={secondaryButtonClass}>
+                            За чуждестранни клиенти
+                        </a>
+                    </div>
+                </div>
+            </section>
 
-                <section className="flex w-full flex-col items-center gap-8">
-                    <a href="/services#accounting" className={cardBase}>
-                        <div
-                            className={`${imageBase} bg-cover`}
-                            style={{
-                                backgroundImage:
-                                    'url("https://sasaccountant.com/wp-content/uploads/2025/06/cooperation-analyst-chart-professional-paper-economics_1418-47-1024x683.jpg")',
-                            }}
-                        />
-                        <div className={titleBase}>Счетоводни услуги на юридически и физически лица</div>
-                        <p className={descBase}>Пълно счетоводно обслужване — текущо осчетоводяване, справки и отчети.</p>
-                        <ul className={bulletsBase}>
-                            <li>Текущо осчетоводяване</li>
-                            <li>Справки и отчети</li>
-                            <li>Документация по закон</li>
-                            <li>Годишно приключване</li>
+            <div id="services" className={containerClass}>
+                <div className={titleWrapClass}>
+                    <h1 className={titleClass}>Услуги & Дейности</h1>
+                </div>
+
+                <div className={contentClass}>
+                    <section className={sectionClass} id="accounting">
+                        <h2 className={headingClass}>Счетоводни услуги</h2>
+                        <ul className={listClass}>
+                            <li>Оперативна счетоводна отчетност на текущите документи, в съответствие с изискванията на българското счетоводно законодателство и Националните или Международните Счетоводни Стандарти</li>
+                            <li>Изготвяне на счетоводна политика и индивидуален сметкоплан</li>
+                            <li>Изготвяне и подаване на месечни справки декларации по Закона за данък върху добавената стойност (ЗДДС)</li>
+                            <li>Изготвяне и подаване на месечни VIES декларации, съгласно изискванията на ЗДДС</li>
+                            <li>Изчисляване на дължимите месечни данъци,и подготвяне на платежни документи за превода им</li>
+                            <li>Изготвяне на периодични отчети, отразяващи текущия финансов резултат според нуждите на клиента</li>
+                            <li>Изготвяне на месечни и периодични справки за дейността на клиента, отразяващи складови наличности, движения по определени счетоводни сметки, разчети с търговски контрагенти и финансови институции</li>
+                            <li>Изготвяне на калкулации и себестойности в зависимост от дейността на клиента</li>
+                            <li>Своевременна информация за настъпили промени в данъчно-осигурителното или трудово законодателства</li>
+                            <li>Допълнителни счетоводни услуги, на база специфичните изисквания на клиента.</li>
+                            <li>Представителство пред осигурителните и данъчни органи във връзка с назначени проверки или ревизии</li>
                         </ul>
-                        <div><span className={tagBase}>Виж повече</span></div>
-                    </a>
+                    </section>
 
-                    <a href="/services#admin" className={cardBase}>
-                        <div
-                            className={`${imageBase} bg-contain`}
-                            style={{ backgroundImage: 'url("/images/ChatGPT Image 01.02.2026 г. 17_04_18.png")' }}
-                        />
-                        <div className={titleBase}>Административни услуги</div>
-                        <p className={descBase}>Изготвяне на документи, договори и административна поддръжка.</p>
-                        <ul className={bulletsBase}>
-                            <li>Договори и уведомления</li>
-                            <li>Административни справки</li>
-                            <li>Поддръжка на документация</li>
-                            <li>Координация по процеси</li>
+                    <section className={sectionClass} id="consulting">
+                        <h2 className={headingClass}>Консултации</h2>
+                        <p className={textClass}>
+{`Постоянните изменения на съществуващите и приемането на нови нормативни актове винаги води до риска от данъчни грешки, които понякога струват твърде скъпо.`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Счетоводната политика на предприятието</li>
+                            <li>Данъчно планиране на дейността и данъчна оптимизация</li>
+                            <li>Организиране документооборота на предприятието</li>
+                            <li>Консултации по трудови и осигурителни въпроси</li>
+                            <li>Консултации относно прилагане на спогодби за избягване двойното данъчно облагане</li>
                         </ul>
-                        <div><span className={tagBase}>Виж повече</span></div>
-                    </a>
+                    </section>
 
-                    <a href="/services#tax" className={cardBase}>
-                        <div className={`${imageBase} bg-cover`} />
-                        <div className={titleBase}>Данъчни услуги</div>
-                        <p className={descBase}>Консултации и подготовка на декларации, оптимизация и съдействие.</p>
-                        <ul className={bulletsBase}>
-                            <li>Данъчни декларации</li>
-                            <li>Данъчно планиране</li>
-                            <li>Оптимизация</li>
-                            <li>Съдействие при проверки</li>
+                    <section className={sectionClass} id="payroll">
+                        <h2 className={headingClass}>ТРЗ</h2>
+                        <p className={textClass}>
+{`За да спестим Вашите усилия да поддържате специфична компетентност и да гарантираме конфиденциалността на възнагражденията, ние осигуряваме възможно най-пълния сервиз по обслужване възнагражденията на Вашия персонал.`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Изготвяне на трудови договори, граждански договори и договори за управление и контрол</li>
+                            <li>Изготвяне и подаване на необходимите уведомления в НАП</li>
+                            <li>Поддържане на трудови досиета на служители</li>
+                            <li>Изготвяне на ведомости за заплати и фишове към тях</li>
+                            <li>Изготвяне на платежни документи за превод на дължими месечни осигуровки и данък върху доходите на физически лица</li>
+                            <li>Обработка на болнични листове и подаване в НОИ</li>
+                            <li>Представяне на информация за осигурените лица в Персонален регистър – Декларации Образец 1 и 6</li>
+                            <li>Изготвяне на справка за разходите на фирмата за трудови възнаграждения и осигуровки по отдели</li>
+                            <li>Представителство пред осигурителните и данъчни органи във връзка с назначени проверки или ревизии</li>
                         </ul>
-                        <div><span className={tagBase}>Виж повече</span></div>
-                    </a>
+                    </section>
 
-                    <a href="/services#company" className={cardBase}>
-                        <div className={`${imageBase} bg-cover`} />
-                        <div className={titleBase}>Регистрация на фирми</div>
-                        <p className={descBase}>Пълно съдействие при откриване на фирма и регистрация по ЗДДС.</p>
-                        <ul className={bulletsBase}>
-                            <li>ЕООД / ООД</li>
-                            <li>Промени в ТР</li>
-                            <li>Регистрация по ЗДДС</li>
-                            <li>Стартова консултация</li>
+                    <section className={sectionClass} id="legal">
+                        <h2 className={headingClass}>Правни услуги</h2>
+                        <p className={textClass}>
+{`Акаунтинг Груп Бг може да Ви осигури правно обслужване в следните обалсти:`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Регистрация и преобразуване на търговски дружества</li>
+                            <li>Изготвяне на всички видове договори</li>
+                            <li>Недвижима собственост и вещно право</li>
+                            <li>Търговско и облигационно право</li>
+                            <li>Право на интелектуалната собственост</li>
+                            <li>Корпоративно право Сливания и придобивания</li>
+                            <li>Дю Дилиджънс на компании или проекти</li>
                         </ul>
-                        <div><span className={tagBase}>Виж повече</span></div>
-                    </a>
+                    </section>
 
-                    <a href="/services#payroll" className={cardBase}>
-                        <div className={`${imageBase} bg-cover`} />
-                        <div className={titleBase}>Обработка на заплати</div>
-                        <p className={descBase}>ТРЗ — възнаграждения, осигуровки, декларации и платежни нареждания.</p>
-                        <ul className={bulletsBase}>
-                            <li>Заплати и осигуровки</li>
-                            <li>Декларации</li>
-                            <li>Платежни нареждания</li>
-                            <li>Кадрови документи</li>
+                    <section className={sectionClass} id="partners">
+                        <h2 className={headingClass}>Партньорски услуги</h2>
+                        <p className={textClass}>
+{`Като утвърдена счетоводна кантора Акаунтинг Груп Бг има изградени партньорства с водещи фирми от следни области, които нашите клиенти могат да използват при преференциални условия.`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Правно обслужване</li>
+                            <li>Трудова медица и ел.измервания</li>
+                            <li>Преводи и легализация</li>
+                            <li>Счетоводен софтуер Питагор</li>
                         </ul>
-                        <div><span className={tagBase}>Виж повече</span></div>
-                    </a>
+                    </section>
 
-                    <a href="/services#vat" className={cardBase}>
-                        <div className={`${imageBase} bg-cover`} />
-                        <div className={titleBase}>Месечна ДДС обработка</div>
-                        <p className={descBase}>Справки-декларации по ДДС и дневници за покупки и продажби.</p>
-                        <ul className={bulletsBase}>
-                            <li>ДДС дневници</li>
-                            <li>Справка-декларация</li>
-                            <li>VIES</li>
-                            <li>Контрол на документи</li>
+                    <section className={sectionClass} id="foreign-clients">
+                        <h2 className={headingClass}>За чуждестранни клиенти и партньори</h2>
+                        <p className={textClass}>
+{`Защо България е толкова атрактивна бизнес дестинация
+България отдавна е атрактивна дестинация за създаване на нов бизнес или преместване на компании от чужбина поради редица причини. Страната предлага идеални условия за съчетаване на работа и по-приятен живот от много други държави в Европа.`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Най-ниски данъци в ЕС</li>
+                            <li>Нисък корпоративен данък от 10%</li>
+                            <li>5% данък за дивиденти</li>
+                            <li>20% ДДС</li>
+                            <li>Професионалисти и работна ръка на много конкурентно заплащане</li>
+                            <li>Много университети и добро образование</li>
+                            <li>Изгодна инфраструктура</li>
+                            <li>4 летища с много дестинации към и от Европа</li>
+                            <li>Сред най-бързите интернет връзки в Европа</li>
+                            <li>Варна е най-добър град за живеене в България и една от най-желаните дестинации за дигитални номади в Европа</li>
                         </ul>
-                        <div><span className={tagBase}>Виж повече</span></div>
-                    </a>
 
-                    <a href="/services#bank" className={cardBase}>
-                        <div className={`${imageBase} bg-cover`} />
-                        <div className={titleBase}>Онлайн банкиране</div>
-                        <p className={descBase}>Помощ при e-banking, плащания и проследяване на транзакции.</p>
-                        <ul className={bulletsBase}>
-                            <li>Плащания</li>
-                            <li>Извлечения</li>
-                            <li>Съгласуване</li>
-                            <li>Контрол на транзакции</li>
+                        <p className={textClass + " mt-6"}>
+{`Регистрация на български компании за чужденци
+Вие имате компания в чужбина и желаета да преместите бизнеса си в България? Или имате на мерението да стартирате нов бизнес тук?`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Регистрация на фирми</li>
+                            <li>Адресна регистрация</li>
+                            <li>Организационна помощ при преместване и остановяване във Варна и София</li>
+                            <li>Мрежа от парньори в сферите на недвижими имоти, адвокати, банки, телекоммуникация, софтуер, маркетинг, почивки и развлечения</li>
+                            <li>Данъчна консултация за оптимизация</li>
+                            <li>Цялостно обслужване</li>
                         </ul>
-                        <div><span className={tagBase}>Виж повече</span></div>
-                    </a>
 
-                    <a href="/services#analysis" className={cardBase}>
-                        <div className={`${imageBase} bg-cover`} />
-                        <div className={titleBase}>Финансов анализ</div>
-                        <p className={descBase}>Анализ на резултати, разходи и ефективност за по-добри решения.</p>
-                        <ul className={bulletsBase}>
-                            <li>Анализ на разходи</li>
-                            <li>Рентабилност</li>
-                            <li>Парични потоци</li>
-                            <li>Управленски отчети</li>
+                        <p className={textClass + " mt-6"}>
+{`Данъчна оптимизация на компании от Европа
+Последните няколко години има голям ръст на международни компании, които се преместват в България поради няколко причини`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Значими данъчни предимства</li>
+                            <li>Член на ЕС от 2007 и преминаване към Еврозона 2024</li>
+                            <li>Все още ниски цени на недвижими имоти</li>
+                            <li>Висококачествен и по-свободен живот</li>
+                            <li>Уникална природа с визможности за туризъм, спорт и отдих през всичките четири сезона</li>
                         </ul>
-                        <div><span className={tagBase}>Виж повече</span></div>
-                    </a>
-                </section>
-
-                <section className="flex max-w-3xl flex-col items-center text-center">
-                    <h3 className="mb-3 text-2xl font-bold text-gray-900">Търсите надежден счетоводен партньор?</h3>
-                    <p className="mb-6 text-[15px] leading-[1.7] text-gray-700">
-                        Работите спокойно, с яснота и сигурност, докато счетоводството е под контрол.
-                    </p>
-                    <Link
-                        to="/contact"
-                        className="inline-flex items-center rounded-full bg-sky-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-sky-600"
-                    >
-                        Свържи се
-                    </Link>
-                </section>
+                    </section>
+                </div>
             </div>
         </div>
     ) : (
-        <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-center gap-12">
-                <section className="max-w-3xl text-center text-gray-800">
-                    <h1 className="mb-4 inline-block rounded-full bg-sky-100 px-6 py-2 text-[18px] font-semibold text-gray-900 shadow-[0_4px_10px_rgba(0,0,0,0.06)]">
-                        Reliable Accounting Services
-                    </h1>
-                    <p className="m-0 text-base leading-[1.7]">
-                        Professional accounting services aligned with Bulgarian legislation and international standards.
-                        You work with a dedicated accounting partner who ensures accuracy, compliance, and clear financial control.
+        <div className={"scroll-smooth " + pageWrap}>
+            <section id="home" className={heroClass}>
+                <div className={heroInnerClass}>
+                    <h1 className={heroTitleClass}>Nikola Halachev Accounting</h1>
+                    <p className={heroTextClass}>
+                        Professional accounting support, tax consultations, staff and payroll,
+                        legal and partnership services for Bulgarian and foreign clients.
                     </p>
-                </section>
 
-                <section className="max-w-3xl text-center">
-                    <h2 className="mb-4 inline-block rounded-full bg-sky-100 px-6 py-2 text-sm font-semibold text-gray-900 shadow-[0_4px_10px_rgba(0,0,0,0.06)]">
-                        WHAT I OFFER
-                    </h2>
-                    <p className="mx-auto max-w-[720px] text-[15px] leading-[1.7] text-gray-700">
-                        Clear processes, predictability, and security. You receive accounting tailored to your business,
-                        direct communication, and full support in dealings with institutions such as the National Revenue Agency.
-                    </p>
-                </section>
+                    <div className={heroButtonsClass}>
+                        <a href="#services" className={primaryButtonClass}>
+                            View services
+                        </a>
+                        <a href="#foreign-clients" className={secondaryButtonClass}>
+                            For foreign clients
+                        </a>
+                    </div>
+                </div>
+            </section>
 
-                <section className="flex w-full flex-col items-center gap-8">
-                    <a href="/services#accounting" className={cardBase}>
-                        <div
-                            className={`${imageBase} bg-cover`}
-                            style={{
-                                backgroundImage:
-                                    'url("https://sasaccountant.com/wp-content/uploads/2025/06/cooperation-analyst-chart-professional-paper-economics_1418-47-1024x683.jpg")',
-                            }}
-                        />
-                        <div className={titleBase}>Accounting services for companies and individuals</div>
-                        <p className={descBase}>Complete accounting services ensuring compliance and financial clarity.</p>
-                        <ul className={bulletsBase}>
-                            <li>Ongoing bookkeeping</li>
-                            <li>Financial statements</li>
-                            <li>Annual closing</li>
-                            <li>Accounting consultations</li>
+            <div id="services" className={containerClass}>
+                <div className={titleWrapClass}>
+                    <h1 className={titleClass}>Services & Activities</h1>
+                </div>
+
+                <div className={contentClass}>
+                    <section className={sectionClass} id="accounting">
+                        <h2 className={headingClass}>Accounting Services</h2>
+                        <ul className={listClass}>
+                            <li>Operational accounting of the current documents in accordance with the requirements of the Bulgarian accounting legislation and national or international accounting standards</li>
+                            <li>Preparation of accounting policy and individual chart of accounts</li>
+                            <li>Preparation and submission of monthly statements under the value Added Tax Act (VAT)</li>
+                            <li>Preparation and submission of monthly VIES declarations, as required by the VAT ACT</li>
+                            <li>Calculation of monthly taxes due, and preparation of payment documents for their translation</li>
+                            <li>Preparation of periodic reports reflecting the current financial result according to the client’s needs</li>
+                            <li>Preparation of monthly and periodic reports on the client’s activity, reflecting stocks, movements in certain accounting accounts, settlements with commercial counterparties and financial institutions</li>
+                            <li>Preparation of calculations and costs depending on the client’s activity</li>
+                            <li>Timely information about changes in the tax-insurance or labour legislation</li>
+                            <li>Additional accounting services, based on the specific requirements of the client.</li>
+                            <li>Representation before insurance and tax authorities in relation to appointed inspections or revisions</li>
                         </ul>
-                        <div><span className={tagBase}>Learn more</span></div>
-                    </a>
+                    </section>
 
-                    <a href="/services#admin" className={cardBase}>
-                        <div
-                            className={`${imageBase} bg-contain`}
-                            style={{ backgroundImage: 'url("/images/ChatGPT Image 01.02.2026 г. 17_04_18.png")' }}
-                        />
-                        <div className={titleBase}>Administrative services</div>
-                        <p className={descBase}>Administrative support and representation before authorities.</p>
-                        <ul className={bulletsBase}>
-                            <li>Communication with NRA & NSSI</li>
-                            <li>Submission of declarations</li>
-                            <li>Document management</li>
-                            <li>Administrative reports</li>
+                    <section className={sectionClass} id="consulting">
+                        <h2 className={headingClass}>Consultations</h2>
+                        <p className={textClass}>
+{`The constant changes in the existing and adoption of new regulations always lead to the risk of tax errors, which sometimes cost too expensive.`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>The accounting policy of the Enterprise</li>
+                            <li>Business tax planning and tax optimization</li>
+                            <li>Organizing the company’s document turnover</li>
+                            <li>Consultations on labour and social security issues</li>
+                            <li>Consultations on the application of agreements to avoid double taxation</li>
                         </ul>
-                        <div><span className={tagBase}>Learn more</span></div>
-                    </a>
+                    </section>
 
-                    <a href="/services#tax" className={cardBase}>
-                        <div className={`${imageBase} bg-cover`} />
-                        <div className={titleBase}>Tax services</div>
-                        <p className={descBase}>Accurate tax planning and compliance.</p>
-                        <ul className={bulletsBase}>
-                            <li>Tax consultations</li>
-                            <li>Tax optimization</li>
-                            <li>Annual tax returns</li>
-                            <li>Support during audits</li>
+                    <section className={sectionClass} id="payroll">
+                        <h2 className={headingClass}>Staff, wages and salaries</h2>
+                        <p className={textClass}>
+{`In order to save your efforts to maintain specific competencies and ensure the confidentiality of wages, we provide the most complete service for your employees ‘ remuneration.`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Drafting of employment contracts, civil contracts and contracts for management and control</li>
+                            <li>Preparation and submission of necessary notices to the NRA</li>
+                            <li>Maintenance of Labour records of employees</li>
+                            <li>Preparation of payrolls for salaries and fiches</li>
+                            <li>Preparation of payment documents for transfer of due monthly insurance and income tax of natural persons</li>
+                            <li>Processing of hospital papers and filing in NSSI</li>
+                            <li>Presentation of information about insured persons in personal register-declarations model 1 and 6</li>
+                            <li>Preparation of a report on the costs of the company for salaries and contributions by department</li>
+                            <li>Representation before insurance and tax authorities in relation to appointed inspections or revisions</li>
                         </ul>
-                        <div><span className={tagBase}>Learn more</span></div>
-                    </a>
+                    </section>
 
-                    <a href="/services#company" className={cardBase}>
-                        <div className={`${imageBase} bg-cover`} />
-                        <div className={titleBase}>Company registration</div>
-                        <p className={descBase}>Fast and compliant company setup.</p>
-                        <ul className={bulletsBase}>
-                            <li>Ltd / LLC registration</li>
-                            <li>Sole traders & freelancers</li>
-                            <li>Registry changes</li>
-                            <li>Startup consulting</li>
+                    <section className={sectionClass} id="legal">
+                        <h2 className={headingClass}>Law consultations</h2>
+                        <p className={textClass}>
+{`Accounting group BG can provide you with legal services in the following:`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Registration and transformation of commercial companies</li>
+                            <li>Preparation of all types of contracts</li>
+                            <li>Immovable property and real estate law</li>
+                            <li>Commercial and contract law</li>
+                            <li>Intellectual property Law</li>
+                            <li>Corporate law mergers and acquisitions</li>
+                            <li>Due diligence of companies or projects</li>
                         </ul>
-                        <div><span className={tagBase}>Learn more</span></div>
-                    </a>
+                    </section>
 
-                    <a href="/services#payroll" className={cardBase}>
-                        <div className={`${imageBase} bg-cover`} />
-                        <div className={titleBase}>Payroll processing</div>
-                        <p className={descBase}>Full payroll and HR administration.</p>
-                        <ul className={bulletsBase}>
-                            <li>Employment contracts</li>
-                            <li>Salaries & social security</li>
-                            <li>Monthly declarations</li>
-                            <li>Leave & sick leave handling</li>
+                    <section className={sectionClass} id="partners">
+                        <h2 className={headingClass}>Partnership Level Services</h2>
+                        <p className={textClass}>
+{`As an established accounting company “Accounting Group BG” has built partnerships with leading companies from the following areas, which our clients can use on preferential terms.`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Legal Services</li>
+                            <li>Occupational Media and electrical measurements</li>
+                            <li>Translation and legalization</li>
+                            <li>Pythagoras Accounting software</li>
                         </ul>
-                        <div><span className={tagBase}>Learn more</span></div>
-                    </a>
+                    </section>
 
-                    <a href="/services#vat" className={cardBase}>
-                        <div className={`${imageBase} bg-cover`} />
-                        <div className={titleBase}>Monthly VAT processing</div>
-                        <p className={descBase}>Timely and accurate VAT reporting.</p>
-                        <ul className={bulletsBase}>
-                            <li>VAT ledgers</li>
-                            <li>VAT returns</li>
-                            <li>VIES declarations</li>
-                            <li>EU transactions</li>
+                    <section className={sectionClass} id="foreign-clients">
+                        <h2 className={headingClass}>For foreign clients and partners</h2>
+                        <p className={textClass}>
+{`Why Bulgaria is such an attractive business destination
+Bulgaria has long been an attractive destination for setting up a new business or moving companies from abroad for a number of reasons. The country offers ideal conditions for combining work and a more pleasant life than many other countries in Europe.`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Lowest taxes in the EU</li>
+                            <li>Low corporation tax of 10%</li>
+                            <li>5% dividend tax</li>
+                            <li>20% VAT</li>
+                            <li>Professionals and labour at very competitive pay</li>
+                            <li>Many universities and good education</li>
+                            <li>Advantageous infrastructure</li>
+                            <li>4 airports with many destinations to and from Europe</li>
+                            <li>Among the fastest internet connections in Europe</li>
+                            <li>Varna is the best city to live in Bulgaria and one of the most desirable destinations for digital nomads in Europe</li>
                         </ul>
-                        <div><span className={tagBase}>Learn more</span></div>
-                    </a>
 
-                    <a href="/services#bank" className={cardBase}>
-                        <div className={`${imageBase} bg-cover`} />
-                        <div className={titleBase}>Online banking</div>
-                        <p className={descBase}>Support and control of banking operations.</p>
-                        <ul className={bulletsBase}>
-                            <li>Payment orders</li>
-                            <li>Bank reconciliation</li>
-                            <li>Account monitoring</li>
-                            <li>Cash flow control</li>
+                        <p className={textClass + " mt-6"}>
+{`Registration of Bulgarian companies for foreigners
+You have a company abroad and want to move your business to Bulgaria? Or do you have the measure to start a new business here?`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Registration of companies</li>
+                            <li>Address registration</li>
+                            <li>Organizational assistance in relocation and establishment in Varna and Sofia</li>
+                            <li>Network of partners in real estate, lawyers, banks, telecoms, software, marketing, holidays and entertainment</li>
+                            <li>Tax consultation for optimization</li>
+                            <li>Comprehensive service</li>
                         </ul>
-                        <div><span className={tagBase}>Learn more</span></div>
-                    </a>
 
-                    <a href="/services#analysis" className={cardBase}>
-                        <div className={`${imageBase} bg-cover`} />
-                        <div className={titleBase}>Financial analysis</div>
-                        <p className={descBase}>Insight and control over financial performance.</p>
-                        <ul className={bulletsBase}>
-                            <li>Cost analysis</li>
-                            <li>Cash flow analysis</li>
-                            <li>Profitability</li>
-                            <li>Management reports</li>
+                        <p className={textClass + " mt-6"}>
+{`Tax optimization of companies from Europe
+The last few years there has been a large growth of international companies moving to Bulgaria for several reasons`}
+                        </p>
+                        <ul className={listClass}>
+                            <li>Significant tax advantages</li>
+                            <li>Member of the EU since 2007 and part of the EURO area 2024</li>
+                            <li>Still low real estate prices</li>
+                            <li>High quality and freer life</li>
+                            <li>Unique nature with opportunities for tourism, sports and recreation throughout all four seasons</li>
                         </ul>
-                        <div><span className={tagBase}>Learn more</span></div>
-                    </a>
-                </section>
-
-                <section className="flex max-w-3xl flex-col items-center text-center">
-                    <h3 className="mb-3 text-2xl font-bold text-gray-900">Looking for a reliable accounting partner?</h3>
-                    <p className="mb-6 text-[15px] leading-[1.7] text-gray-700">
-                        Work with confidence, clarity, and full financial control.
-                    </p>
-                    <Link
-                        to="/contact"
-                        className="inline-flex items-center rounded-full bg-sky-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-sky-600"
-                    >
-                        Contact me
-                    </Link>
-                </section>
+                    </section>
+                </div>
             </div>
         </div>
     )

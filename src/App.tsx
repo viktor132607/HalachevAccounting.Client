@@ -3,19 +3,19 @@ import Footer from "./components/Footer"
 
 import Home from "./pages/Home"
 import About from "./pages/About"
-import Services from "./pages/Services"
+// import Services from "./pages/Services"
 import Contact from "./pages/Contact"
 import Privacy from "./pages/Privacy"
 import Cookies from "./pages/Cookies"
 import Terms from "./pages/Terms"
 
-import Blog from "./pages/Blog"
-import BlogPost from "./pages/BlogPost"
+// import Blog from "./pages/Blog"
+// import BlogPost from "./pages/BlogPost"
 
 import { Routes, Route } from "react-router-dom"
 
-import { IdentityRoutes } from "./routes/IdentityRoutes"
-import { AdminRoutes } from "./pages/admin/AdminRoutes"
+// import { IdentityRoutes } from "./routes/IdentityRoutes"
+// import { AdminRoutes } from "./pages/admin/AdminRoutes"
 
 export default function App() {
     return (
@@ -26,17 +26,21 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
-                    <Route path="/services" element={<Services />} />
+                    {/* <Route path="/services" element={<Services />} /> */}
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/privacy" element={<Privacy />} />
                     <Route path="/cookies" element={<Cookies />} />
                     <Route path="/terms" element={<Terms />} />
 
+                    {/* 
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/blog/:id" element={<BlogPost />} />
+                    */}
 
-                    {IdentityRoutes}
-                    {AdminRoutes}
+                    {/* {IdentityRoutes} */}
+                    {/* {AdminRoutes} */}
+
+                    <Route path="*" element={<Home />} />
                 </Routes>
             </main>
 
